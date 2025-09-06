@@ -40,6 +40,7 @@ body.dark {
 body {
   background: var(--bg-color);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 *::selection {
@@ -48,7 +49,8 @@ body {
 }
 
 section {
-  padding: 50px 10%;
+  padding: 50px 5%;
+  max-width: 100%;
 }
 
 .heading {
@@ -123,19 +125,22 @@ header.shadow {
   width: 100%;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 0.2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 10rem;
-  left: 200px;
+  gap: 2rem;
+  padding: 0 5%;
 }
 
 .home-img {
-  order: 3;
-  width: 1000px;
+  order: 2;
+  width: 100%;
+  max-width: 500px;
+  justify-self: center;
 }
 
 .home-img img {
   width: 100%;
+  height: auto;
 }
 
 .home-text span {
@@ -258,15 +263,17 @@ span {
 /* Services */
 .services-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 2rem;
+  max-width: 100%;
 }
 
 .services-box {
   padding: 20px;
-  width: 260px;
+  width: 100%;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -275,6 +282,7 @@ span {
   background: var(--service-bg);
   border-bottom: 2px solid var(--main-color);
   transition: 0.3s;
+  justify-self: center;
 }
 
 .services-box:hover {
@@ -359,10 +367,32 @@ body.dark .footer-social a i {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .home {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .home-img {
+    order: 1;
+    max-width: 400px;
+  }
+
+  .home-text {
+    order: 2;
+  }
+}
+
 @media (max-width: 768px) {
   #menu-icon {
     display: block;
   }
+
+  header {
+    padding: 13px 5%;
+  }
+
   header .navbar {
     position: absolute;
     top: -500px;
@@ -375,7 +405,95 @@ body.dark .footer-social a i {
     transition: 0.3s;
     text-align: center;
   }
+
   .navbar.active {
     top: 100%;
+  }
+
+  section {
+    padding: 30px 5%;
+  }
+
+  .home {
+    padding: 0 5%;
+    gap: 1rem;
+  }
+
+  .home-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-text h2 {
+    font-size: 1rem;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .about-img img {
+    width: 60%;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .skills-img img {
+    width: 60%;
+    padding-left: 0;
+  }
+
+  .services-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .services-box {
+    max-width: 100%;
+  }
+
+  .footer-social a i {
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-text h1 {
+    font-size: 2rem;
+  }
+
+  .home-text h2 {
+    font-size: 0.9rem;
+  }
+
+  .home-text p {
+    font-size: 0.8rem;
+  }
+
+  .heading h2 {
+    font-size: 24px;
+  }
+
+  .services-box {
+    padding: 15px;
+  }
+
+  .services-box .bx {
+    font-size: 40px;
+  }
+
+  .footer h2 {
+    font-size: 1.2rem;
+  }
+
+  .footer-social a i {
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
   }
 }
