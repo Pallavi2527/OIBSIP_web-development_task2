@@ -23,6 +23,9 @@ A personal portfolio website to showcase my frontend development skills and serv
 - Social media links integration
 - Mobile-friendly navigation
 
+## Deployed URL
+🚀 **Live Demo**: [View Personal Portfolio](https://pallavi2527.github.io/OIBSIP_web-development_task2/)
+
 ## How to Run
 Open `index.html` in your browser. Click the moon icon to toggle dark mode.
 
